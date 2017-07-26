@@ -1,0 +1,24 @@
+class File {
+    render() {
+        if (isFile) {
+            return (<li></li>);
+        }
+
+        return (<Folder name childer />)
+    }
+}
+
+
+class Folder {
+    renderFiles() {
+        this.props.files.map(file => <File data={file} />);
+    }
+    render() {
+        return(
+            <li>
+                {this.props.name}
+                {this.props.files ? this.renderFiles() : null}
+            </li>
+        )
+    }
+}
