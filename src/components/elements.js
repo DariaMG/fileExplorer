@@ -140,8 +140,8 @@ const data = {
 class FolderType extends React.Component{
   constructor(props) {
     super(props);
-    this.state = { kids:this.props.data };
-    this.state = { hide: true };
+    this.state={kids : this.props.data }
+    this.state= ({hide : true })
 
     this.handleClick = this.handleClick.bind(this);
   }
@@ -152,7 +152,7 @@ class FolderType extends React.Component{
   }
 
   handleClick(){
-    this.state.hide === 'true' ? this.setState({ hide:'false' }) :  this.setState({ hide:'true' })
+    this.state.hide === true ? this.setState({ hide : false }) :  this.setState({ hide: true })
     const a = this.state.hide;
     console.log(a);
   }
@@ -164,7 +164,7 @@ class FolderType extends React.Component{
       <span className='folder-item' onClick= { this.handleClick.bind(this) } >
         {this.props.name }
       </span>
-      {(this.state.hide === 'true') ?
+      {(this.state.hide === false) ?
         (<ul> 
           {this.renderFile()} 
         </ul>)
